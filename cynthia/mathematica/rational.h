@@ -4,12 +4,12 @@ namespace cynthia { namespace mathematica {
         int numerator;
         int denominator;
         public:
-        rational(const int numerator, const int denominator);
+        rational(const int, const int);
         double getValue();
         int getNumerator();
         int getDenominator();
-        bool isEqual(const rational& that);
-        bool isGreaterThan(const rational& that);
-        bool isLessThan(const rational& that);
+        bool isEqual(const rational&);
+        bool isGreaterThan(const rational&);
+        bool isLessThan(const rational&);
     };
 }}

@@ -5,10 +5,7 @@ using namespace std;
 
 namespace cynthia { namespace mathematica {
 
-    rational::rational(const int numerator, const int denominator) {
-        this->numerator = numerator;
-        this->denominator = denominator;
-    }
+    rational::rational(const int numerator, const int denominator):numerator(numerator), denominator(denominator){}
 
     int rational::getNumerator() {
         return this->numerator;
@@ -19,6 +16,12 @@ namespace cynthia { namespace mathematica {
     }
 
     double rational::getValue() {
+        if (this->denominator == 0) {
+            throw invalid_argument("denominator can not be zero.");
+        }
+        if (this->numerator % this->denominator == 0) {
+            throw out_of_range("numerator can not be multiple of denominator.");
+        }
         return double(this->numerator)/double(this->denominator);
     }
 
